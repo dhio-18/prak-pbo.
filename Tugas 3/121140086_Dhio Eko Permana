@@ -1,0 +1,55 @@
+class AkunBank:
+    list_pelanggan = []
+
+    def init(self, __nomer_pelanggan, nama_pelanggan, __total_saldo):
+        self.__nomer_pelanggan = nomer_pelanggan
+        self.__nama_pelanggan = nama_pelanggan
+        self.__total_saldo = total_saldo
+        self.daftar_pelanggan.append(self)
+
+
+    def lihat_menu(self):
+        print(f"Halo {Akun1.__nama_pelanggan}, ingin melakukan apa?")
+        print("1. Lihat saldo \n 2. Tarik tunai \n 3. Transfer Saldo \n 4. Keluar")
+
+    def lihat_saldo(self):
+        print("Dhio memiliki saldo", Akun1.__total_saldo)
+
+    def tarik_tunai(self, jumlah_tarik):
+        if jumlah_tarik > Akun1.__total_saldo:
+            print("Nominal saldo yang anda punya tidak cukup!")
+        else:
+            Akun1.__total_saldo = Akun1.__total_saldo - jlhtarik
+            print("Saldo berhasil ditarik!")
+
+    def transfer_otomatis (self,nominal,nomer_pelanggan):
+      if nominal < self.__total_saldo: 
+        for pelanggan in self.daftar_pelanggan:
+            if pelanggan.__nomer_pelanggan == nomer_pelanggan:
+              pelanggan.__total_saldo += nominal
+              self.__total_saldo -= nominal
+              print (f"Transfer Rp. {nominal} ke {pelanggan.__nama_pelanggan} sukses!")
+      else :
+            print ("Saldo anda tidak mencukupi untuk melakukan transfer! \n Kembali Ke Menu Utama")
+    
+
+Akun1 = AkunBank(1234, Dhio, 5 000 000 000)
+Akun2 = AkunBank(2345, "Ukraina", 6 666 666 666)
+Akun3 = AkunBank(3456, "Elon Musk", 9 999 999 999)
+
+Loop = True
+while Loop:
+    print("Selamat datang di Bank Jago")
+    Akun1.lihat_menu()
+    akses_akun = (input("Masukkan nomor input : "))
+    if akses_akun == '1':
+        Akun1.lihat_saldo()
+    elif akses_akun == '2':
+        jlhtarik = int(input("Masukkan nominal yang ingin ditarik : "))
+        Akun1.tarik_tunai(jlhtarik)
+    elif akses_akun == '3':
+        nominal_input = int(input("Masukkan nominal yang ingin di transfer : "))
+        nopel_input = input("Masukkan no rekening tujuan : ")
+        Akun1.transfer_otomatis(nominal_input, nopel_input)
+    elif akses_akun == '4':
+      Loop = False
