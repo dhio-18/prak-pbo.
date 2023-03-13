@@ -9,7 +9,7 @@ class AkunBank:
 
 
     def lihat_menu(self):
-        print(f"Halo {Akun1.__nama_pelanggan}, ingin melakukan apa?")
+        print(f"Halo {Akun1.__nama_pelanggan}, selanjutnya?")
         print("1. Lihat saldo \n 2. Tarik tunai \n 3. Transfer Saldo \n 4. Keluar")
 
     def lihat_saldo(self):
@@ -19,8 +19,8 @@ class AkunBank:
         if jumlah_tarik > Akun1.__total_saldo:
             print("Nominal saldo yang anda punya tidak cukup!")
         else:
-            Akun1.__total_saldo = Akun1.__total_saldo - jlhtarik
-            print("Saldo berhasil ditarik!")
+            Akun1.__total_saldo = Akun1.__total_saldo - jumlah_tarik
+            print("Saldo sukses ditarik!")
 
     def transfer_otomatis (self,nominal,nomer_pelanggan):
       if nominal < self.__total_saldo: 
