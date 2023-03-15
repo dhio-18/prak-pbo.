@@ -1,0 +1,16 @@
+# Prak_Pbo
+class Orang:
+
+    def _init_(self, nama, pekerjaan, tahun_lahir, gender):
+        self.nama = nama
+        self.pekerjaan = pekerjaan
+        self.tahun_lahir = tahun_lahir
+        self.gender = gender
+    def kegiatan(self, kegiatan):
+        print(kegiatan)
+
+orang1 = Orang("Enrico", "Mahasiswa", 2000, "Laki laki")
+print(orang1.nama)
+print(orang1.pekerjaan)
+print(orang1.gender)
+orang1.kegiatan("tidur")
